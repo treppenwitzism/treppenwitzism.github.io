@@ -36,58 +36,31 @@
     <!-- Featured Worker Section -->
     <section id="workers" class="featured">
         <h2 class="featured-title">
-            <span class="featured-white">Featured</span> <span class="featured-gold">Worker</span>
+            <span class="featured-white">Featured</span> <span class="featured-gold">Workers</span>
         </h2>
         <div class="worker-card">
-            <div class="worker-image"></div>
+            <div id="worker-image" class="worker-image"></div>
             <div class="worker-info">
                 <div class="worker-header">
-                    <h3 class="worker-name">Clemence Valdez</h3>
-                    <div class="worker-details">
-                        <span>Age: 98</span>
-                        <span>Birthday: 02/29/1521</span>
-                        <span>Nickname: P.Diddy</span>
-                    </div>
+                    <h3 id="worker-name" class="worker-name"></h3>
+                    <div id="worker-details" class="worker-details"></div>
                 </div>
-                <div class="worker-stats">
-                    <div class="stat-item">
-                        <div class="stat-label">HP</div>
-                        <div class="stat-bar">
-                            <div class="stat-bar-fill">
-                                <div class="stat-value">Immortal</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Stamina</div>
-                        <div class="stat-bar">
-                            <div class="stat-bar-fill">
-                                <div class="stat-value">Hardcore</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Appetite</div>
-                        <div class="stat-bar">
-                            <div class="stat-bar-fill">
-                                <div class="stat-value">Watermelon and Chicken</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">Attitude</div>
-                        <div class="stat-bar">
-                            <div class="stat-bar-fill">
-                                <div class="stat-value">Freaky</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="worker-description">
-                    [Placeholder] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nunc sit amet aliquam tincidunt, nisi nisl aliquam nunc, quis aliquam nisl nisl quis nunc. Sed vitae nunc sit amet nunc aliquam tincidunt.
-                </div>
+                <div id="worker-stats" class="worker-stats"></div>
+                <div id="worker-description" class="worker-description"></div>
             </div>
         </div>
+        <div class="gallery-nav">
+            <button class="nav-btn" id="prev-worker">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-btn" id="next-worker">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="worker-counter">
+            <span id="current-worker">1</span> / <span id="total-workers">3</span>
+        </div>
+        <div class="worker-dots" id="worker-dots"></div>
     </section>
     
     <!-- About Section -->
@@ -106,10 +79,6 @@
         </div>
     </section>
     
-    <script>
-        document.querySelector('.learn-more-btn').addEventListener('click', function() {
-            document.querySelector('#workers').scrollIntoView({ behavior: 'smooth' });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

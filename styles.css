@@ -98,7 +98,6 @@ nav {
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
 }
 
-/* Featured Worker Section */
 .featured {
     padding: 5rem 5%;
     background-color: #0a0a0a;
@@ -127,6 +126,7 @@ nav {
     display: flex;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
 }
 
 .worker-card:hover {
@@ -136,7 +136,10 @@ nav {
 
 .worker-image {
     width: 40%;
-    background: url('assets/clemence.png') center/cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
 }
 
 .worker-info {
@@ -156,18 +159,22 @@ nav {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: #ffd700;
+    transition: opacity 0.3s;
 }
 
 .worker-details {
     display: flex;
     gap: 1.5rem;
     color: #aaa;
+    flex-wrap: wrap;
+    transition: opacity 0.3s;
 }
 
 .worker-stats {
     margin-bottom: 2rem;
     border-bottom: 1px solid #333;
     padding-bottom: 1rem;
+    transition: opacity 0.3s;
 }
 
 .stat-item {
@@ -212,6 +219,66 @@ nav {
 .worker-description {
     line-height: 1.6;
     color: #ddd;
+    transition: opacity 0.3s;
+}
+
+.gallery-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background-color: #222;
+    color: #ffd700;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.worker-counter {
+    color: #aaa;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.worker-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.worker-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.worker-dot.active {
+    background-color: #ffd700;
+    transform: scale(1.2);
+}
+
+.worker-dot:hover {
+    background-color: #555;
 }
 
 /* About Section */
@@ -250,6 +317,15 @@ nav {
     color: white;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
 @media (max-width: 768px) {
     .worker-card {
         flex-direction: column;
@@ -266,5 +342,10 @@ nav {
     
     .nav-links {
         display: none;
+    }
+    
+    .worker-details {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
