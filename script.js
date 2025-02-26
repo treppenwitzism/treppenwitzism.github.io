@@ -41,6 +41,34 @@ const workers = [
             Attitude: "Sexual Offender"
         },
         description: "[Placeholder] ."
+    },
+    {
+        name: "Michael Maulas",
+        age: "Jumperwire",
+        birthday: "03/19/1532",
+        nickname: "Jamal",
+        image: "/assets/mikl.png",
+        stats: {
+            HP: "Big",
+            Stamina: "Gawk Gawk",
+            Appetite: "Twinks",
+            Attitude: "Nutter"
+        },
+        description: "[Placeholder] ."
+    },
+    {
+        name: "Allen Prado",
+        age: "Star",
+        birthday: "2/2/2222",
+        nickname: "Patrick",
+        image: "/assets/alln.png",
+        stats: {
+            HP: "Small",
+            Stamina: "Hehe",
+            Appetite: "Big Cock (Chicken)",
+            Attitude: "Twink"
+        },
+        description: "[Placeholder] ."
     }
 ];
 
