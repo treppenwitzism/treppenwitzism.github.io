@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 entriesContainer.innerHTML = '';
                 
                 if (querySnapshot.empty) {
-                    entriesContainer.innerHTML = '<p class="no-entries">No messages yet. Be the first to sign our guestbook!</p>';
+                    entriesContainer.innerHTML = '<p class="no-entries">No messages yet.</p>';
                     return;
                 }
                 

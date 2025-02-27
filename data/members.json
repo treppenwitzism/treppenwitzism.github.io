@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "firstName": "Clemence",
+      "lastName": "Valdez",
+      "birthday": "February 27, 2007",
+      "nickname": "Klimins",
+      "quote": "Ansarap mo yah.",
+      "image": "images/members/clemence.jpg",
+      "achievements": ["Freaky", "Black", "Exotic Species"]
+    },
+    {
+      "id": 2,
+      "firstName": "Ronnie",
+      "lastName": "Mariano",
+      "birthday": "November 3, 2006",
+      "nickname": "Ron",
+      "quote": "Si Garry mahilig sa bata.",
+      "image": "images/members/ronnie.jpg",
+      "achievements": ["Putogenic", "Racister", "Chronically Online"]
+    }
+]
