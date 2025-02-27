@@ -1,23 +1,10 @@
-// Guestbook JavaScript file with Firebase integration
+// Guestbook JavaScript file with Firebase integration (updated)
 document.addEventListener('DOMContentLoaded', function() {
-    // Firebase configuration
-    // Replace these values with your own Firebase project config
-    const firebaseConfig = {
-        apiKey: "AIzaSyD5_kerSrGxIB6xH9Wi3ImmGM7ioDPdQQE",
-        authDomain: "hg6-guestbook.firebaseapp.com",
-        projectId: "hg6-guestbook",
-        storageBucket: "hg6-guestbook.firebasestorage.app",
-        messagingSenderId: "72505894008",
-        appId: "1:72505894008:web:8f37c78f779986a8a1798d"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    // Get Firebase references from window objects (set by the script in HTML)
+    const db = window.fbDb;
+    const { collection, addDoc, getDocs, query, orderBy, limit, onSnapshot } = window.fbFirestore;
     
-    // Get a reference to the database service
-    const db = firebase.firestore();
-    const entriesCollection = db.collection('guestbook-entries');
-    
+    const entriesCollectionRef = collection(db, 'guestbook-entries');
     const guestbookForm = document.getElementById('guestbookForm');
     const entriesContainer = document.getElementById('entries');
     
@@ -59,7 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
         entriesContainer.innerHTML = '<p class="loading">Loading messages...</p>';
         
         // Get entries from Firebase, ordered by date (newest first)
-        entriesCollection.orderBy('date', 'desc').limit(50).get()
+        const entriesQuery = query(entriesCollectionRef, orderBy('date', 'desc'), limit(50));
+        
+        getDocs(entriesQuery)
             .then((querySnapshot) => {
                 entriesContainer.innerHTML = '';
                 
@@ -89,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'Submitting...';
         
         // Add to Firebase
-        entriesCollection.add(entry)
+        addDoc(entriesCollectionRef, entry)
             .then(() => {
                 // Add to DOM (at the beginning)
                 addEntryToDOM(entry, true);
@@ -156,36 +145,37 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Setup real-time updates for new entries
     function setupRealTimeUpdates() {
-        entriesCollection.orderBy('date', 'desc')
-            .onSnapshot((snapshot) => {
-                snapshot.docChanges().forEach((change) => {
-                    if (change.type === "added") {
-                        // Check if this is a completely new entry (not from initial load)
-                        const newEntryData = change.doc.data();
-                        const entryTimestamp = new Date(newEntryData.date).getTime();
-                        const currentTimestamp = new Date().getTime();
+        const realtimeQuery = query(entriesCollectionRef, orderBy('date', 'desc'));
+        
+        onSnapshot(realtimeQuery, (snapshot) => {
+            snapshot.docChanges().forEach((change) => {
+                if (change.type === "added") {
+                    // Check if this is a completely new entry (not from initial load)
+                    const newEntryData = change.doc.data();
+                    const entryTimestamp = new Date(newEntryData.date).getTime();
+                    const currentTimestamp = new Date().getTime();
+                    
+                    // If entry is less than 10 seconds old and not already in the DOM, add it
+                    if (currentTimestamp - entryTimestamp < 10000) {
+                        const existingEntries = entriesContainer.querySelectorAll('.entry');
+                        let isAlreadyInDOM = false;
                         
-                        // If entry is less than 10 seconds old and not already in the DOM, add it
-                        if (currentTimestamp - entryTimestamp < 10000) {
-                            const existingEntries = entriesContainer.querySelectorAll('.entry');
-                            let isAlreadyInDOM = false;
+                        existingEntries.forEach(entry => {
+                            const entryName = entry.querySelector('.entry-name').textContent;
+                            const entryMessage = entry.querySelector('.entry-message').textContent;
                             
-                            existingEntries.forEach(entry => {
-                                const entryName = entry.querySelector('.entry-name').textContent;
-                                const entryMessage = entry.querySelector('.entry-message').textContent;
-                                
-                                if (entryName === newEntryData.name && entryMessage === newEntryData.message) {
-                                    isAlreadyInDOM = true;
-                                }
-                            });
-                            
-                            if (!isAlreadyInDOM) {
-                                addEntryToDOM(newEntryData, true);
+                            if (entryName === newEntryData.name && entryMessage === newEntryData.message) {
+                                isAlreadyInDOM = true;
                             }
+                        });
+                        
+                        if (!isAlreadyInDOM) {
+                            addEntryToDOM(newEntryData, true);
                         }
                     }
-                });
+                }
             });
+        });
     }
     
     // Start real-time updates
