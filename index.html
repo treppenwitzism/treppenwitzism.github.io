@@ -3,82 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ManPower</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>HG6</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <span class="logo-man">Man</span><span class="logo-power">Power</span>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html"><span class="logo-hg">HG</span><span class="logo-6">6</span></a>
         </div>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#workers">Workers</a>
-            <a href="#about">About Us</a>
-            <a href="#vip">VIP <i class="fas fa-crown crown-icon"></i></a>
+            <a href="index.html">Home</a>
+            <a href="members.html">Members</a>
+            <a href="museum.html">Museum</a>
+            <a href="guestbook.html">Guestbook</a>
         </div>
     </nav>
-    
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1 class="hero-title">
-            <span class="logo-man">Man</span><span class="logo-power">Power</span>
-        </h1>
-        <p class="hero-description">
-            [Placeholder] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nunc sit amet aliquam tincidunt, nisi nisl aliquam nunc, quis aliquam nisl nisl quis nunc.
-        </p>
-        <button class="learn-more-btn" onclick="document.getElementById('workers').scrollIntoView({behavior: 'smooth'})">
-            Learn More
-        </button>
-    </section>
-    
-    <!-- Featured Worker Section -->
-    <section id="workers" class="featured">
-        <h2 class="featured-title">
-            <span class="featured-white">Featured</span> <span class="featured-gold">Workers</span>
-        </h2>
-        <div class="worker-card">
-            <div id="worker-image" class="worker-image"></div>
-            <div class="worker-info">
-                <div class="worker-header">
-                    <h3 id="worker-name" class="worker-name"></h3>
-                    <div id="worker-details" class="worker-details"></div>
-                </div>
-                <div id="worker-stats" class="worker-stats"></div>
-                <div id="worker-description" class="worker-description"></div>
-            </div>
+
+    <main class="hero">
+        <div class="logo-main">
+            <span class="logo-hg">HG</span><span class="logo-6">6</span>
         </div>
-        <div class="gallery-nav">
-            <button class="nav-btn" id="prev-worker" aria-label="Previous worker">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="nav-btn" id="next-worker" aria-label="Next worker">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+        
+        <div class="quote-container">
+            <p class="quote" id="randomQuote"></p>
+            <p class="author" id="quoteAuthor"></p>
         </div>
-        <div class="worker-counter">
-            <span id="current-worker">1</span> / <span id="total-workers">3</span>
+        
+        <div class="main-buttons">
+            <a href="members.html" class="btn">Members</a>
+            <a href="museum.html" class="btn">Museum</a>
+            <a href="guestbook.html" class="btn">Guestbook</a>
         </div>
-        <div class="worker-dots" id="worker-dots"></div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-logo">
-            <span class="logo-man">Man</span><span class="logo-power">Power</span>
-        </div>
-        <p class="about-description">
-            [Placeholder] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nunc sit amet aliquam tincidunt, nisi nisl aliquam nunc, quis aliquam nisl nisl quis nunc. Sed vitae nunc sit amet nunc aliquam tincidunt. Sed vitae nunc sit amet nunc aliquam tincidunt.
-        </p>
-        <div class="social-links">
-            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </section>
-    
-    <script src="script.js"></script>
+    </main>
+
+    <script src="scripts/quotes.js"></script>
 </body>
 </html>

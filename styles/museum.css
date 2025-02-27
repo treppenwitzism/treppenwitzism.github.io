@@ -1,0 +1,124 @@
+/* Museum Stylesheet */
+
+.museum-header,
+.museum-date-header {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.museum-header h1,
+.museum-date-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: var(--primary-white);
+    margin-bottom: 1rem;
+}
+
+.museum-header p,
+.museum-date-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
+}
+
+.museum-content,
+.museum-date-content {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dates-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.date-item {
+    display: inline-block;
+    background-color: rgba(20, 20, 20, 0.8);
+    color: var(--primary-white);
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 30px;
+    border: 2px solid var(--primary-green);
+    transition: all 0.3s ease;
+}
+
+.date-item:hover {
+    background-color: var(--primary-green);
+    color: var(--bg-darker);
+    transform: translateY(-5px);
+}
+
+.museum-description {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    background-color: rgba(20, 20, 20, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-caption {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .museum-header h1,
+    .museum-date-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .museum-header h1,
+    .museum-date-header h1 {
+        font-size: 2rem;
+    }
+    
+    .date-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
