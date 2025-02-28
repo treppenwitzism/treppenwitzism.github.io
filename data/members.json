@@ -18,5 +18,15 @@
       "quote": "Si Garry mahilig sa bata.",
       "image": "images/members/ronnie.jpg",
       "achievements": ["Putogenic", "Racister", "Chronically Online"]
+    },
+    {
+      "id": 3,
+      "firstName": "Michael",
+      "lastName": "Maulas",
+      "birthday": "August 6, 2007",
+      "nickname": "Mike",
+      "quote": "If it's not tight, it's not right.",
+      "image": "images/members/michael.jpg",
+      "achievements": ["Racist", "Homophobic", "Nocturnal"]
     }
 ]
