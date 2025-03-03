@@ -1,0 +1,70 @@
+/* Box Page Styles */
+.container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.api-card {
+    background-color: rgba(18, 18, 18, 0.7);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.api-card:hover {
+    border-color: var(--primary-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 102, 0.2);
+}
+
+.card-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-white);
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#api-link{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    opacity: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .api-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .api-grid {
+        grid-template-columns: 1fr;
+    }
+}

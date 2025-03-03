@@ -6,7 +6,7 @@ const quotes = [
     },
     {
         text: "Next na kita nyo sakin, nasa kulungan na ko.",
-        author: "Clemence Valdez"
+        author : "Clemence Valdez"
     },
     {
         text: "Magiging elementary teacher ako, kasi gusto ko ng—",

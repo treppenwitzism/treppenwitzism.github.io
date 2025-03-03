@@ -1,4 +1,4 @@
-// Guestbook JavaScript file with Firebase integration (updated)
+// Guestbook JavaScript file with Firebase integration and role icons
 document.addEventListener('DOMContentLoaded', function() {
     // Get Firebase references from window objects (set by the script in HTML)
     const db = window.fbDb;
@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const entriesCollectionRef = collection(db, 'guestbook-entries');
     const guestbookForm = document.getElementById('guestbookForm');
     const entriesContainer = document.getElementById('entries');
+    
+    // Define emails with special roles
+    const roleEmails = {
+        // Replace 'your-email@example.com' with your actual email
+        '': { role: 'admin', label: 'Admin' },
+        // Add more emails and roles as needed
+        'carlozjeffersonsantiago@gmail.com': { role: 'mod', label: '💎' },
+        'vip@example.com': { role: 'vip', label: 'VIP' }
+    };
     
     // Load existing entries
     loadEntries();
@@ -111,9 +120,15 @@ document.addEventListener('DOMContentLoaded', function() {
             minute: '2-digit'
         });
         
+        // Check if user has a special role
+        const roleHTML = getUserRoleHTML(entry.email);
+        
         entryElement.innerHTML = `
             <div class="entry-header">
-                <span class="entry-name">${escapeHTML(entry.name)}</span>
+                <div class="entry-name-container">
+                    <span class="entry-name">${escapeHTML(entry.name)}</span>
+                    ${roleHTML}
+                </div>
                 <span class="entry-date">${formattedDate}</span>
             </div>
             <div class="entry-message">${escapeHTML(entry.message)}</div>
@@ -141,6 +156,15 @@ document.addEventListener('DOMContentLoaded', function() {
             entryElement.style.opacity = '1';
             entryElement.style.transform = 'translateY(0)';
         }, 10);
+    }
+    
+    // Function to get role HTML based on email
+    function getUserRoleHTML(email) {
+        if (roleEmails[email]) {
+            const role = roleEmails[email];
+            return `<span class="role-icon role-${role.role}">${role.label}</span>`;
+        }
+        return '';
     }
     
     // Setup real-time updates for new entries

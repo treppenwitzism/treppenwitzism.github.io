@@ -2,7 +2,7 @@
 
 .guestbook-header {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
 }
 
 .guestbook-header h1 {
@@ -20,11 +20,11 @@
 }
 
 .guestbook-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding: 2rem 5%;
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 5%;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -32,34 +32,58 @@
 .guestbook-entries {
     background-color: rgba(20, 20, 20, 0.8);
     border-radius: 10px;
-    padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.guestbook-form h2,
-.guestbook-entries h2 {
+.guestbook-form {
+    padding: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.guestbook-entries {
+    padding: 2rem;
+    width: 100%;
+}
+
+.guestbook-form h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--primary-white);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
-.form-group {
+.guestbook-entries h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
+    text-align: center;
+    animation: titleColorShift 4s infinite alternate;
+}
+
+@keyframes titleColorShift {
+    0% { color: var(--primary-white); }
+    50% { color: var(--primary-green); }
+    100% { color: var(--primary-white); }
+}
+
+.form-group {
+    margin-bottom: 1rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
     color: var(--text-color);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.7rem;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
@@ -75,17 +99,41 @@
     border-color: var(--primary-green);
 }
 
+.form-group textarea {
+    height: 100px;
+}
+
 .entries-list {
-    max-height: 500px;
+    max-height: 600px;
     overflow-y: auto;
     padding-right: 0.5rem;
 }
 
 .entry {
     padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--primary-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.entry:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 255, 170, 0.05) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
 }
 
 .entry:last-child {
@@ -95,22 +143,91 @@
 .entry-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 0.8rem;
 }
 
+.entry-name-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .entry-name {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--primary-green);
+    font-size: 1.1rem;
 }
 
 .entry-date {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
 }
 
 .entry-message {
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--primary-white);
+    font-size: 1.05rem;
+}
+
+/* Role Icons */
+.role-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.role-admin {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
+    color: gold;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    position: relative;
+    animation: pulseGlow 2s infinite alternate;
+}
+
+.role-admin:before {
+    content: '👑 ';
+    margin-right: 0.3rem;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+}
+
+/* Add more role types as needed */
+.role-mod {
+    background: rgba(0, 128, 255, 0.2);
+    color: rgb(100, 180, 255);
+    border: 1px solid rgba(0, 128, 255, 0.3);
+}
+
+.role-vip {
+    background: rgba(170, 0, 255, 0.2);
+    color: rgb(200, 100, 255);
+    border: 1px solid rgba(170, 0, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .guestbook-content {
+        padding: 1rem;
+    }
+    
+    .guestbook-form,
+    .guestbook-entries {
+        padding: 1.5rem;
+    }
 }
