@@ -28,5 +28,15 @@
       "quote": "If it's not tight, it's not right.",
       "image": "images/members/michael.jpg",
       "achievements": ["Racist", "Homophobic", "Nocturnal"]
+    },
+    {
+      "id": 4,
+      "firstName": "Allen",
+      "lastName": "Prado",
+      "birthday": "June 16, 2007",
+      "nickname": "Patricia",
+      "quote": "Reacted 🫵😂 to your message",
+      "image": "images/members/allen.jpg",
+      "achievements": ["Gaymer", "Loverboy", "Submissive"]
     }
 ]

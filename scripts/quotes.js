@@ -1,10 +1,6 @@
 // Quotes data
 const quotes = [
     {
-        text: "If her age is on the clock, she's ready for the—",
-        author: "Garry Edicto"
-    },
-    {
         text: "Next na kita nyo sakin, nasa kulungan na ko.",
         author : "Clemence Valdez"
     },
@@ -15,6 +11,38 @@ const quotes = [
     {
         text: "Pano pag nakita ang panty ko?",
         author: "Clemence Valdez"
+    },
+    {
+        text: "Violence doesn't solve all of your problems, but it solves most of the problem",
+        author: "Allen Prado"
+    },
+    {
+        text: "Pahipo ule.",
+        author: "Kenxin Maranan"
+    },
+    {
+        text: "Wet look ka sakin mamaya.",
+        author: "Jaimes Oreto"
+    },
+    {
+        text: "Papsukin din kita <3.",
+        author: "Garry Edicto"
+    },
+    {
+        text: "Uungol na naman to, antahimik eh.",
+        author: "Ace Castilla"
+    },
+    {
+        text: "Kokola ko che kia samnida.",
+        author: "Jaimes Oreto"
+    },
+    {
+        text: "Jaimes patingin nga ako ng ass mo.",
+        author: "Kenxin Maranan"
+    },
+    {
+        text: "Pilot section ka pa naman tapos hindi ka nagsasabon ng puwit.",
+        author: "Kenxin Maranan"
     }
 ];
 
