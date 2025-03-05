@@ -5,7 +5,7 @@
       "lastName": "Valdez",
       "birthday": "February 27, 2007",
       "nickname": "Klimins",
-      "quote": "Ansarap mo yah.",
+      "quote": "Laplapan na lang tol.",
       "image": "images/members/clemence.jpg",
       "achievements": ["Freaky", "Black", "Exotic Species"]
     },
@@ -15,9 +15,9 @@
       "lastName": "Mariano",
       "birthday": "November 3, 2006",
       "nickname": "Ron",
-      "quote": "Si Garry mahilig sa bata.",
+      "quote": "Galit ako sa kulot.",
       "image": "images/members/ronnie.jpg",
-      "achievements": ["Putogenic", "Racister", "Chronically Online"]
+      "achievements": ["Putogenic", "Poor", "Chronically Online"]
     },
     {
       "id": 3,
@@ -25,9 +25,9 @@
       "lastName": "Maulas",
       "birthday": "August 6, 2007",
       "nickname": "Mike",
-      "quote": "If it's not tight, it's not right.",
+      "quote": "Kung ang tagalog ng daga ay rat, bakit ka nagalit nong sinampal kita na bura-",
       "image": "images/members/michael.jpg",
-      "achievements": ["Racist", "Homophobic", "Nocturnal"]
+      "achievements": ["Racist", "Kupalist", "Nocturnal"]
     },
     {
       "id": 4,
@@ -38,5 +38,25 @@
       "quote": "Reacted 🫵😂 to your message",
       "image": "images/members/allen.jpg",
       "achievements": ["Gaymer", "Loverboy", "Submissive"]
+    },
+    {
+      "id": 5,
+      "firstName": "Emmanuel",
+      "lastName": "Nocillado",
+      "birthday": "May 10, 2007",
+      "nickname": "Eman",
+      "quote": "The Only Fair In The Reality Is The Unfair Reality.",
+      "image": "images/members/emman.jpg",
+      "achievements": ["The Little Red Ugly Duckling", "Pinocchio In The Wonderland", "Diwata (The Pares Overloader)"]
+    },
+    {
+      "id": 6,
+      "firstName": "Garry Jr",
+      "lastName": "Edicto",
+      "birthday": "April 30, 1945",
+      "nickname": "Ohthin",
+      "quote": "In my 11 years of teaching, ngayon lang ako naka experience ng ganto.",
+      "image": "images/members/garry.jpg",
+      "achievements": ["Grindr LVL100", "Sean John Combs", "Motherless "]
     }
 ]
