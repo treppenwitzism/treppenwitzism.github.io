@@ -43,6 +43,10 @@ const quotes = [
     {
         text: "Pilot section ka pa naman tapos hindi ka nagsasabon ng puwit.",
         author: "Kenxin Maranan"
+    },
+    {
+        text: "Recess o resex?",
+        author: "Jaimes Oreto"
     }
 ];
 
