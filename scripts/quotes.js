@@ -25,7 +25,7 @@ const quotes = [
         author: "Jaimes Oreto"
     },
     {
-        text: "Papsukin din kita <3.",
+        text: "Papasukin din kita <3.",
         author: "Garry Edicto"
     },
     {
