@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HG6 - Ranked</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/ranked.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html"><span class="logo-hg">HG</span><span class="logo-6">6</span></a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="members.html">Members</a>
+            <a href="museum.html">Museum</a>
+            <a href="box.html">Box</a>
+            <a href="guestbook.html">Guestbook</a>
+            <a href="ranked.html" class="active">Ranked</a>
+        </div>
+    </nav>
+
+    <main class="ranked-container">
+        <h1 class="section-title">JerkMate Ranked</h1>
+        
+        <div class="titles-info-toggle">
+            <button id="titles-info-btn" class="btn info-btn">Title Information</button>
+        </div>
+        
+        <div id="titles-info-popup" class="titles-info-popup">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h3>JerkMate Milestones</h3>
+                    <button id="close-popup-btn" class="close-btn">&times;</button>
+                </div>
+                <ul class="milestone-list">
+                    <li><span class="milestone">50 jerks:</span> Bronze Beater</li>
+                    <li><span class="milestone">100 jerks:</span> Silver Stroker</li>
+                    <li><span class="milestone">250 jerks:</span> Gold Grinder</li>
+                    <li><span class="milestone">500 jerks:</span> Platinum Lubricator</li>
+                    <li><span class="milestone">1,000 jerks:</span> Diamond Gooner</li>
+                    <li><span class="milestone">2,500 jerks:</span> Master Edger</li>
+                    <li><span class="milestone">5,000 jerks:</span> Grandmaster Grip</li>
+                    <li><span class="milestone">10,000 jerks:</span> Mythic Wanker</li>
+                    <li><span class="milestone">25,000 jerks:</span> Ambatubasss</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="leaderboard-container">
+            <h2>Jerkerboard</h2>
+            <div class="leaderboard-table-container">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Jerk</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Leaderboard rows will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="game-container" class="game-container">
+            <div id="clicker-section" class="clicker-section hidden">
+                <div class="user-info">
+                    <p>Playing as: <span id="player-name"></span> <span id="player-title" class="player-title"></span></p>
+                    <p>Your Score: <span id="player-score">0</span></p>
+                    <button id="sign-out-btn" class="btn sign-out-btn">Sign Out</button>
+                </div>
+                
+                <div class="clicker-container">
+                    <button id="clicker-btn" class="clicker-btn">
+                        <span class="btn-text">JERK</span>
+                        <span class="btn-ripple"></span>
+                    </button>
+                </div>
+                
+                <div class="titles-container">
+                    <h3>Your Titles</h3>
+                    <div id="player-titles" class="titles-list">
+                        <!-- Player titles will be displayed here -->
+                        <p class="no-titles">Keep jerking to earn titles.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="auth-container" class="auth-container">
+                <h3>Sign In to Play</h3>
+                <form id="sign-in-form">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Display Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <button type="submit" class="btn auth-btn">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    
+    <script src="scripts/ranked.js"></script>
+</body>
+</html>

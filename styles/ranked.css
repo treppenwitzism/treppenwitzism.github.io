@@ -1,0 +1,420 @@
+/* Ranked Game Styles */
+.ranked-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 80px);
+}
+
+/* Titles Info Toggle Button */
+.titles-info-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.info-btn {
+    background-color: rgba(0, 255, 102, 0.1);
+    border: 2px solid var(--primary-green);
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem;
+}
+
+/* Titles Info Popup */
+.titles-info-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: var(--bg-dark);
+    border: 2px solid var(--primary-green);
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.3);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.popup-header h3 {
+    color: var(--primary-green);
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--primary-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--primary-green);
+}
+
+.milestone-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem 1.5rem;
+}
+
+.milestone {
+    color: var(--primary-green);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Auth Container */
+.auth-container {
+    background-color: rgba(18, 18, 18, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+    margin-top: 2rem;
+}
+
+.auth-container h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary-white);
+    font-size: 1.3rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--primary-white);
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+}
+
+.auth-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Game Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.clicker-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(18, 18, 18, 0.8);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.1);
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+#player-score {
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+.player-title {
+    color: var(--primary-green);
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 0.5rem;
+}
+
+.sign-out-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Leaderboard */
+.leaderboard-container {
+    background-color: rgba(18, 18, 18, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+}
+
+.leaderboard-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-white);
+}
+
+.leaderboard-table-container {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leaderboard-table th {
+    color: var(--primary-green);
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    background-color: rgba(10, 10, 10, 0.9);
+    z-index: 10;
+}
+
+.leaderboard-table tr:hover {
+    background-color: rgba(0, 255, 102, 0.1);
+}
+
+.user-row {
+    background-color: rgba(0, 255, 102, 0.08);
+}
+
+/* Clicker Button */
+.clicker-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.clicker-btn {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #121212, #0a0a0a);
+    border: 3px solid var(--primary-green);
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.clicker-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 255, 102, 0.7);
+}
+
+.clicker-btn:active {
+    transform: scale(0.95);
+}
+
+.btn-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    z-index: 2;
+}
+
+.btn-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 255, 102, 0.4);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.clicker-btn.clicked .btn-ripple {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Titles Section */
+.titles-container {
+    background-color: rgba(18, 18, 18, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+}
+
+.titles-container h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary-white);
+}
+
+.titles-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.title-badge {
+    background-color: rgba(0, 255, 102, 0.2);
+    border: 1px solid var(--primary-green);
+    color: var(--primary-white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.no-titles {
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Active Navigation Link */
+.nav-links a.active {
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+/* Title notification */
+.title-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(10, 10, 10, 0.9);
+    border: 2px solid var(--primary-green);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
+    transform: translateX(150%);
+    transition: transform 0.5s ease;
+    z-index: 1000;
+}
+
+.title-notification.show {
+    transform: translateX(0);
+}
+
+.notification-content h3 {
+    color: var(--primary-green);
+    margin: 0 0 0.5rem 0;
+}
+
+.notification-content p {
+    color: var(--primary-white);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .sign-out-btn {
+        margin-top: 0.5rem;
+    }
+    
+    .milestone-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .ranked-container {
+        padding: 1rem;
+    }
+    
+    .clicker-btn {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .btn-text {
+        font-size: 2.5rem;
+    }
+}
