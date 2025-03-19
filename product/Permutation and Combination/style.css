@@ -1,0 +1,7 @@
+body{
+    background: #2c3e50;
+    font-family: 'Courier New', Courier, monospace;
+
+    background-size:contain;
+    z-index: 0;
+}
