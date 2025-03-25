@@ -30,6 +30,7 @@ async function loadExcelFile() {
         const worksheet = workbook.Sheets[firstSheetName];
         
         questions = XLSX.utils.sheet_to_json(worksheet);
+        
         startQuiz();
     } catch (error) {
         quizContainer.innerHTML = `
